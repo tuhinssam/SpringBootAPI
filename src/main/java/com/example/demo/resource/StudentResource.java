@@ -39,7 +39,7 @@ public class StudentResource {
     @RequestMapping(
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE,
-            path = "{studentId}"
+            path = "student/{studentId}"
     )
     public Student getStudentById(@PathVariable("studentId") UUID studentId){
         return studentService.getStudentById(studentId);
