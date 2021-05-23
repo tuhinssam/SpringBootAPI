@@ -1,14 +1,19 @@
 package com.example.demo.dao;
 
 import com.example.demo.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+@Repository("fakeDao")
 public class StudentFakeDaoImpl implements StudentDao{
     private final Map<UUID, Student> database;
 
     public StudentFakeDaoImpl() {
         database = new HashMap<>();
+        UUID studentId = UUID.randomUUID();
+        database.put(
+                studentId,
+                new Student(studentId,31, "Tuhin","Samanta","SpringBoot"));
     }
 
     @Override
@@ -30,7 +35,7 @@ public class StudentFakeDaoImpl implements StudentDao{
     @Override
         public int updateStudentById(UUID student, Student studentUpdate) {
         database.put(student, studentUpdate);
-        return 0;
+        return 1;
     }
 
     @Override
