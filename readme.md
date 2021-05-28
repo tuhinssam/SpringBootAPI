@@ -44,3 +44,7 @@ PUT method:
 DELETE method:
 - endpoint:
 /api/v1/students/{studentId}
+
+Test Cases in Spring Boot 
+-using JUnit (done basic)
+- Mockito (yet to be implemented)
